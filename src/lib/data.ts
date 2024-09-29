@@ -2,11 +2,11 @@ import axios from "axios";
 import { StateResponse } from "./definitions";
 
 export async function fetchState(
-  rowsPerPage: number,
+  page: number,
 ): Promise<StateResponse | undefined> {
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_PUBLIC_API_URL}/api/states?per_page=${rowsPerPage}`,
+      `${import.meta.env.VITE_PUBLIC_API_URL}/api/states?page=${page}`,
     );
 
     return response.data.data;
