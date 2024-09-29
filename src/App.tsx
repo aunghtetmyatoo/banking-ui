@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <div className="mt-10 px-40">
+      <div className="mt-4 lg:mt-10 px-6 lg:px-40">
         <State />
       </div>
     </>
