@@ -16,6 +16,9 @@ import {
   Selection,
 } from "@nextui-org/react";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { BsLayoutThreeColumns } from "react-icons/bs";
+import { FiPlusCircle } from "react-icons/fi";
+import { FaSearch } from "react-icons/fa";
 
 import { fetchState } from "../lib/data.js";
 import { StateProps, StateResponse } from "../lib/definitions.js";
@@ -128,7 +131,7 @@ export default function State() {
             isClearable
             className="w-full sm:max-w-[44%]"
             placeholder="Search by name..."
-            startContent={<MdOutlineDarkMode />}
+            startContent={<FaSearch />}
             value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
@@ -136,10 +139,7 @@ export default function State() {
           <div className="flex gap-3">
             <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
-                <Button
-                  endContent={<MdOutlineDarkMode className="text-small" />}
-                  variant="flat"
-                >
+                <Button endContent={<BsLayoutThreeColumns />} variant="flat">
                   Columns
                 </Button>
               </DropdownTrigger>
@@ -158,7 +158,10 @@ export default function State() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button color="primary" endContent={<MdOutlineDarkMode />}>
+            <Button
+              color="primary"
+              endContent={<FiPlusCircle className="text-lg" />}
+            >
               Add New
             </Button>
           </div>

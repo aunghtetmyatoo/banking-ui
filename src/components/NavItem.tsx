@@ -7,33 +7,31 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import { MdOutlineDarkMode } from "react-icons/md";
 
 type DropdownItemProps = {
   name: string;
   route: string;
-  icon: string;
+  icon: React.ReactNode;
 };
 
 type NavItemProps = {
   name: string;
   route: string;
-  icon: string;
+  icon: React.ReactNode;
   dropdowns?: DropdownItemProps[];
 };
 
 export default function NavItem({
   name,
   route = "#",
+  icon,
   dropdowns = [],
 }: NavItemProps) {
-  const iconClasses =
-    "text-xl text-default-500 pointer-events-none flex-shrink-0";
-
   return (
     <NavbarMenuItem isActive>
       {dropdowns.length == 0 ? (
         <Link href={route} aria-current="page">
+          <span className="mr-2">{icon}</span>
           {name}
         </Link>
       ) : (
@@ -45,10 +43,7 @@ export default function NavItem({
           </DropdownTrigger>
           <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
             {dropdowns?.map((dropdown) => (
-              <DropdownItem
-                key={dropdown.name}
-                startContent={<MdOutlineDarkMode className={iconClasses} />}
-              >
+              <DropdownItem key={dropdown.name} startContent={dropdown.icon}>
                 {dropdown.name}
               </DropdownItem>
             ))}

@@ -11,6 +11,11 @@ import {
 } from "@nextui-org/react";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
 import NavItem from "./NavItem";
+import { LiaMapMarkedAltSolid, LiaMapMarkerAltSolid } from "react-icons/lia";
+import { FaRegUser, FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineTransaction } from "react-icons/ai";
+import { GrTransaction } from "react-icons/gr";
+import { PiHandDeposit, PiHandWithdraw } from "react-icons/pi";
 
 export default function Header() {
   const menuItems = [
@@ -30,17 +35,17 @@ export default function Header() {
     {
       name: "General",
       route: "#",
-      icon: "bla",
+      icon: <AiOutlineTransaction />,
       dropdowns: [
         {
           name: "States",
           route: "#",
-          icon: "bla",
+          icon: <LiaMapMarkedAltSolid />,
         },
         {
           name: "Townships",
           route: "#",
-          icon: "bla",
+          icon: <LiaMapMarkerAltSolid />,
         },
       ],
     },
@@ -52,12 +57,12 @@ export default function Header() {
         {
           name: "User List",
           route: "#",
-          icon: "bla",
+          icon: <FaRegUser />,
         },
         {
           name: "Account List",
           route: "#",
-          icon: "bla",
+          icon: <FaRegUserCircle />,
         },
       ],
     },
@@ -69,7 +74,7 @@ export default function Header() {
         {
           name: "Transaction History",
           route: "#",
-          icon: "bla",
+          icon: <AiOutlineTransaction />,
         },
       ],
     },
@@ -81,17 +86,17 @@ export default function Header() {
         {
           name: "Transfer",
           route: "#",
-          icon: "bla",
+          icon: <GrTransaction />,
         },
         {
           name: "Deposit",
           route: "#",
-          icon: "bla",
+          icon: <PiHandDeposit />,
         },
         {
           name: "Withdraw",
           route: "#",
-          icon: "bla",
+          icon: <PiHandWithdraw />,
         },
       ],
     },
